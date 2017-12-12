@@ -1,3 +1,5 @@
+NB: You might find useful the [sample proposal](https://github.com/zamfi/cca-programming-electronics-fall-2017/blob/master/hw/sample-proposal.md) useful in completing this assignment!
+
 # Your Project Title Here
 
 One-sentence summary of your project goes here. Then, make sure you have each of these sections completed:
