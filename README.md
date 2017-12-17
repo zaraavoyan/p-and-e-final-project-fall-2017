@@ -18,7 +18,7 @@ The most challenging part was coding the display part itself, everything else af
 - 3.2' TFT LCD screen
 - Jumper wires
 
-[Fritzing diagram - this isn't how the shield is connected since it's not the same one, but the thermometer is connected like this] (https://drive.google.com/a/cca.edu/file/d/1-p4NJ48oKWVzbgLhkwBgPsI4trJ0rRzv/view?usp=sharing)
+[Fritzing diagram - this isn't how the shield is connected since it's not the same one, but the thermometer is connected like this](https://drive.google.com/a/cca.edu/file/d/1-p4NJ48oKWVzbgLhkwBgPsI4trJ0rRzv/view?usp=sharing)
 
 
 ## Challenges
@@ -41,15 +41,15 @@ Photos and videos of your completed final project!
 
 ## References and links
 
-[Color Picking guide] (http://henrysbench.capnfatz.com/henrys-bench/arduino-adafruit-gfx-library-user-guide/arduino-16-bit-tft-rgb565-color-basics-and-selection/)
+[Color Picking guide](http://henrysbench.capnfatz.com/henrys-bench/arduino-adafruit-gfx-library-user-guide/arduino-16-bit-tft-rgb565-color-basics-and-selection/)
 
-[16 Bit color generator] (https://ee-programming-notepad.blogspot.com/2016/10/16-bit-color-generator-picker.html) 
+[16 Bit color generator](https://ee-programming-notepad.blogspot.com/2016/10/16-bit-color-generator-picker.html) 
 
-[Very helpful!! Basic display commands] (https://www.youtube.com/watch?v=Fj0yXP0tCLU)
+[Very helpful!! Basic display commands](https://www.youtube.com/watch?v=Fj0yXP0tCLU)
 
-[Using a temperature sensor] (http://learn.adafruit.com/tmp36-temperature-sensor/using-a-temp-sensor)
+[Using a temperature sensor](http://learn.adafruit.com/tmp36-temperature-sensor/using-a-temp-sensor)
 
-[The screen I used] (https://www.amazon.com/Elegoo-Inches-Screen-Technical-Arduino/dp/B01EUVJYME/ref=sr_1_7?ie=UTF8&qid=1513502111&sr=8-7&keywords=arduino+display)
+[The screen I used](https://www.amazon.com/Elegoo-Inches-Screen-Technical-Arduino/dp/B01EUVJYME/ref=sr_1_7?ie=UTF8&qid=1513502111&sr=8-7&keywords=arduino+display)
 
 Elegoo TFT and GFX libraries, since I wasn't using the original Adafruit display!
 
