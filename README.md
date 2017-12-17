@@ -20,7 +20,6 @@ The most challenging part was coding the display part itself, everything else af
 
 [Fritzing diagram](https://drive.google.com/a/cca.edu/file/d/1-p4NJ48oKWVzbgLhkwBgPsI4trJ0rRzv/view?usp=sharing) (this isn't how the shield is connected since it's not the same one, but the thermometer is connected like this)
 
-I'm using pin 15 as my analog input.
 
 ## Challenges
 
