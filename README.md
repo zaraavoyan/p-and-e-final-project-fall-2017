@@ -2,11 +2,11 @@
 
 # Your Project Title Here
 
-My goal was to create a game-like interactive thermostat.
+My goal was to create a game-like interactive thermometer.
 
 ## Summary
 
-This project will use a connected LCD screen to display the current temperature and change the display depending on the number read.
+This project will use a connected LCD screen to display the current temperature and change the display depending on the number read. The idea came to me as I was playing with the thermostat in my own house and realized that the display could be made much more fun, and combining that with my love for drawing and video games, I came up with a hybrid of all these aspects.
 
 The most challenging part was coding the display part itself, everything else after goes pretty smoothly, granted that the thermostat works. These things seem to be pretty glitchy, and a lot of them don't give off any readings, I've found.
 
