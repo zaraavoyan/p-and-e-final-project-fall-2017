@@ -13,19 +13,20 @@ The most challenging part was coding the display part itself, everything else af
 
 ## Component Parts
 
-- Arduino MEGA
-- TMP36 temperature sensor
-- 3.2' TFT LCD screen
+- Arduino MEGA (input and output)
+- TMP36 temperature sensor (input and output)
+- 3.2' TFT LCD color screen (output)
 - Jumper wires
 
-[Fritzing diagram - this isn't how the shield is connected since it's not the same one, but the thermometer is connected like this](https://drive.google.com/a/cca.edu/file/d/1-p4NJ48oKWVzbgLhkwBgPsI4trJ0rRzv/view?usp=sharing)
+[Fritzing diagram](https://drive.google.com/a/cca.edu/file/d/1-p4NJ48oKWVzbgLhkwBgPsI4trJ0rRzv/view?usp=sharing) (this isn't how the shield is connected since it's not the same one, but the thermometer is connected like this)
 
+I'm using pin 15 as my analog input.
 
 ## Challenges
 
 Except the technical difficulties of the temperature sensor not working, the coding of the display took the longest. It was also hard to figure out what exactly could and couldn't be done in Arduino compared to p5.js, so I had to backtrack on a lot of ideas and features in order to be able to make the project work.
 
-Also, since my initial project didn't include a temperature sensor, I ended up having to order an Arduino MEGA much further into the project. 
+Also, since my initial project didn't include a temperature sensor, I ended up having to order an Arduino MEGA much further into the project so it could support extra analog imputs. 
 
 ## Timeline
 
@@ -37,7 +38,7 @@ Also, since my initial project didn't include a temperature sensor, I ended up h
 
 ## Completed Work
 
-Photos and videos of your completed final project!
+[Photos and videos available here](https://drive.google.com/open?id=1eTCGgqlSSsFCVM1-Tbd6M8ubOg3NG9fo)
 
 ## References and links
 
