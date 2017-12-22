@@ -1,0 +1,389 @@
+#include <Elegoo_GFX.h>
+#include <Elegoo_TFTLCD.h>
+#include <TouchScreen.h>
+
+#if defined(__SAM3X8E__)
+#undef __FlashStringHelper::F(string_literal)
+#define F(string_literal) string_literal
+#endif
+#define YP A3
+#define XM A2
+#define YM 9
+#define XP 8
+
+#define TS_MINX 120
+#define TS_MAXX 900
+
+#define TS_MINY 70
+#define TS_MAXY 920
+
+int frameNumber = 0;
+
+TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
+
+#define LCD_CS A3
+#define LCD_CD A2
+#define LCD_WR A1
+#define LCD_RD A0
+
+#define LCD_RESET A4
+#define  BLACK   0x0000
+#define  BLUE  0x0E9F
+#define  GREEN    0x8F43
+#define  ORANGE    0xE4A6
+#define WHITE   0xFFFF
+#define BROWN 0x79C3
+#define  RED     0xF800
+#define CYAN    0x07FF
+#define MAGENTA 0xF81F
+#define YELLOW  0xFFE0
+#define DARKBLUE 0x1A94
+
+
+int sensorPin = 14;
+
+
+Elegoo_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
+
+
+void setup(void) {
+  Serial.begin(9600);
+
+  tft.reset();
+
+  uint16_t identifier = tft.readID();
+
+  {
+    identifier = 0x9341;
+
+  }
+
+  tft.begin(identifier);
+  tft.fillScreen(BLACK);
+  tft.setCursor(55, 100);
+  tft.setTextSize(3);
+  tft.setTextColor(BLUE);
+  tft.print("Welcome!");
+  tft.setTextSize(2);
+  tft.setCursor(45, 130);
+  tft.print("Tap to start!");
+
+  // if (touchscreen) here;
+  //
+  //tft.fillScreen(WHITE);
+  //tft.fillCircle(0,80,15, PINK);
+  //tft.fillCircle(30,100,30, PINK);
+  //tft.fillCircle(60,110,20, PINK);
+  //tft.fillCircle(80,100,15, PINK);
+  //tft.fillCircle(150,100,20,PINK);
+  //tft.fillCircle(180,100,13,PINK);
+  //tft.fillCircle(200,110,16,PINK);
+  //tft.fillCircle(230,100,30,PINK);
+  //tft.fillRect(0,100,240,220,PINK);
+  //tft.fillTriangle(110,70,-20,200,280,220, PURPLE);
+  //tft.fillCircle(115,75,7,PURPLE);
+  //tft.fillCircle(116,84,13,PURPLE);
+  //tft.fillCircle(130,215,100,PURPLE);
+  //tft.fillCircle(155,95,15,PINK);
+  //tft.fillCircle(100,220,100,PURPLE); //mountainenhancement
+  //tft.fillCircle(40,340,170,BLACK); //ground
+  //tft.fillCircle(170,350,160,BLACK); //ground
+  //tft.fillRect(0,270,240,5,WHITE);
+  //tft.fillRect(30,150,5,200,WHITE);
+  //tft.fillRect(110,150,5,200,WHITE);
+  //tft.fillRect(190,150,5,200,WHITE);
+
+
+
+}
+
+void CoreBackground() {
+
+  tft.fillScreen(BLUE);
+  tft.fillRect(0, 210, 300, 300, GREEN);
+  tft.fillRoundRect(82, 140, 60, 50, 23, ORANGE);
+  tft.fillTriangle(85, 155, 96, 130, 115, 155, ORANGE);
+  tft.fillTriangle(108, 155, 132, 130, 139, 156, ORANGE);
+  tft.fillRect(90, 170, 17, 40, ORANGE);
+  tft.fillRect(120, 170, 20, 40, ORANGE);
+  tft.fillRect(90, 170, 40, 25, ORANGE);
+
+  tft.fillRect(100, 150, 5, 5, WHITE);
+  tft.fillRect(120, 150, 5, 5, WHITE);
+  tft.fillRect(107, 155, 10, 5, BROWN);
+
+
+}
+
+
+void backgroundWinter() {
+
+  tft.fillScreen(BLUE);
+  tft.fillRect(0, 210, 300, 300, WHITE);
+  tft.fillTriangle(40, 210, 70, 100, 100, 210, GREEN);
+  tft.fillCircle(75, 100, 10, YELLOW);
+  tft.fillCircle(60, 130, 5, RED);
+  tft.fillCircle(70, 160, 5, RED);
+  tft.fillRoundRect(82, 140, 60, 50, 23, ORANGE);
+  tft.fillTriangle(85, 155, 96, 130, 115, 155, ORANGE);
+  tft.fillTriangle(108, 155, 132, 130, 139, 156, ORANGE);
+  tft.fillRect(90, 170, 17, 40, ORANGE);
+  tft.fillRect(120, 170, 20, 40, ORANGE);
+  tft.fillRect(90, 170, 40, 25, ORANGE);
+
+  tft.fillRect(100, 150, 5, 5, WHITE);
+  tft.fillRect(120, 150, 5, 5, WHITE);
+  tft.fillRect(107, 155, 10, 5, BROWN);
+
+
+}
+
+void backgroundSummer() {
+  tft.fillScreen(BLUE);
+  tft.fillRect(0, 140, 300, 300, DARKBLUE);
+  tft.fillRect(0, 210, 300, 300, YELLOW);
+  tft.fillCircle (180, 60, 30, YELLOW);
+  tft.fillRoundRect(82, 140, 60, 50, 23, ORANGE);
+
+  tft.fillTriangle(85, 155, 96, 130, 115, 155, ORANGE);
+  tft.fillTriangle(108, 155, 132, 130, 139, 156, ORANGE);
+  tft.fillRect(90, 170, 17, 40, ORANGE);
+  tft.fillRect(120, 170, 20, 40, ORANGE);
+  tft.fillRect(90, 170, 40, 25, ORANGE);
+
+  tft.fillRect(100, 150, 5, 5, WHITE);
+  tft.fillRect(120, 150, 5, 5, WHITE);
+  tft.fillRect(107, 155, 10, 5, BROWN);
+}
+
+
+void backgroundFall() {
+  tft.fillScreen(BLUE);
+  tft.fillRect(0, 210, 300, 300, GREEN);
+  tft.fillCircle (180, 60, 30, YELLOW);
+  tft.fillCircle(160,60,10,WHITE);
+  tft.fillCircle(150,60,10,WHITE);
+  tft.fillCircle(140,60,10,WHITE);
+  
+  tft.fillRoundRect(82, 140, 60, 50, 23, ORANGE);
+
+  tft.fillTriangle(85, 155, 96, 130, 115, 155, ORANGE);
+  tft.fillTriangle(108, 155, 132, 130, 139, 156, ORANGE);
+  tft.fillRect(90, 170, 17, 40, ORANGE);
+  tft.fillRect(120, 170, 20, 40, ORANGE);
+  tft.fillRect(90, 170, 40, 25, ORANGE);
+
+  tft.fillRect(100, 150, 5, 5, WHITE);
+  tft.fillRect(120, 150, 5, 5, WHITE);
+  tft.fillRect(107, 155, 10, 5, BROWN);
+}
+
+
+
+#define MINPRESSURE 10
+#define MAXPRESSURE 1000
+
+
+
+void loop()
+{
+  digitalWrite(13, HIGH);
+  TSPoint p = ts.getPoint();
+  digitalWrite(13, LOW);
+
+
+  //pinMode(XP, OUTPUT);
+  pinMode(XM, OUTPUT);
+  pinMode(YP, OUTPUT);
+
+  boolean changed = false;
+  if (p.z > MINPRESSURE && p.z < MAXPRESSURE) {
+
+    frameNumber += 1;
+    delay(1000);
+    changed = true;
+
+  }
+
+  if (frameNumber == 1 && changed == true) {
+    CoreBackground();
+
+    tft.fillRect(30, 250, 190, 50, WHITE);
+    tft.setTextSize(1);
+    tft.setTextColor(BROWN);
+    delay(1000);
+    tft.setCursor(55, 270);
+    tft.print("Hi! I'm Coco the Cat!");
+
+  }
+
+
+  if (frameNumber == 2 && changed == true) {
+    CoreBackground();
+
+    tft.setCursor(200, 280);
+    tft.print(">");
+
+    tft.fillRect(30, 250, 190, 50, WHITE);
+    tft.setTextSize(1);
+    tft.setTextColor(BROWN);
+    delay(1000);
+    tft.setCursor(45, 270);
+    tft.print("It's so nice to meet you!");
+    tft.setCursor(200, 280);
+    tft.print(">");
+  }
+
+  if (frameNumber == 3 && changed == true) {
+    CoreBackground();
+    tft.setCursor(200, 280);
+    tft.print(">");
+
+    tft.fillRect(30, 250, 190, 50, WHITE);
+    tft.setTextSize(1);
+    tft.setTextColor(BROWN);
+    delay(1000);
+    tft.setCursor(45, 267);
+    tft.print("I won't bother asking your");
+    tft.setCursor(45, 277);
+    tft.print("name,");
+    tft.setCursor(200, 280);
+    tft.print(">");
+  }
+
+
+  if (frameNumber == 4 && changed == true) {
+    CoreBackground();
+    tft.setCursor(200, 280);
+    tft.print(">");
+
+
+    tft.fillRect(30, 250, 190, 50, WHITE);
+    tft.setTextSize(1);
+    tft.setTextColor(BROWN);
+    delay(1000);
+    tft.setCursor(45, 267);
+    tft.print("I probably won't remember");
+    tft.setCursor(45, 277);
+    tft.print("it anyway.");
+    tft.setCursor(200, 280);
+    tft.print(">");
+
+  }
+
+  if (frameNumber == 5 && changed == true) {
+    CoreBackground();
+    tft.setCursor(200, 280);
+    tft.print(">");
+
+
+    tft.fillRect(30, 250, 190, 50, WHITE);
+    tft.setTextSize(1);
+    tft.setTextColor(BROWN);
+    delay(1000);
+    tft.setCursor(45, 267);
+    tft.print("Are you ready to find");
+    tft.setCursor(45, 277);
+    tft.print("out the weather for today?");
+    tft.setCursor(200, 280);
+    tft.print(">");
+  }
+
+
+  if (frameNumber == 6 && changed == true) {
+    delay(1000);
+    tft.fillScreen(BLACK);
+    tft.setCursor(50, 140);
+    tft.setTextSize(1);
+    tft.setTextColor(BLUE);
+    tft.print("Measuring temperature...");
+    delay(5000);
+    int reading = analogRead(sensorPin);
+    float voltage = reading * 5.0;
+    voltage /= 1024.0;
+
+    Serial.print(voltage); Serial.println(" volts");
+
+    float temperatureC = (voltage - 0.5) * 100 ;
+    Serial.print(temperatureC); Serial.println(" degrees C");
+
+if (temperatureC <= 25 && temperatureC >= 0 ) {
+        backgroundFall();
+ tft.setCursor(20, 260);
+      tft.setTextSize(2);
+      tft.setTextColor(BLACK);
+      tft.print("Current temp:");
+      tft.print(temperatureC); tft.print("C");
+       }
+    if (temperatureC < 0 ); {
+      backgroundWinter();
+      tft.setCursor(20, 260);
+      tft.setTextSize(2);
+      tft.setTextColor(BLACK);
+      tft.print("Current temp:");
+      tft.print(temperatureC); tft.print("C");
+    }
+
+     
+    if (temperatureC > 25)
+    {
+      backgroundSummer();
+      tft.setCursor(20, 260);
+      tft.setTextSize(2);
+      tft.setTextColor(BLACK);
+      tft.print("Current temp:");
+      tft.print(temperatureC); tft.print("C");
+    }   
+  
+  
+  } 
+  
+  
+    if (frameNumber == 7 && changed == true) {
+    delay(1000);
+    tft.fillScreen(BLACK);
+    tft.setCursor(40, 140);
+    tft.setTextSize(1);
+    tft.setTextColor(BLUE);
+    tft.print("Converting to Fahrenheit...");
+    delay(5000);
+    int reading = analogRead(sensorPin);
+    float voltage = reading * 5.0;
+    voltage /= 1024.0;
+    
+
+  
+
+     float temperatureF = (temperatureC * 9.0 / 5.0) + 32.0;
+     
+     if (temperatureF <= 70 && temperatureF >= 32 ) {
+        backgroundFall();
+ tft.setCursor(20, 260);
+      tft.setTextSize(2);
+      tft.setTextColor(BLACK);
+      tft.print("Current temp:");
+      tft.print(temperatureF); tft.print("F");
+       }
+    if (temperatureF < 32 && temperatureF >-10 ); {
+      backgroundWinter();
+      tft.setCursor(20, 260);
+      tft.setTextSize(2);
+      tft.setTextColor(BLACK);
+      tft.print("Current temp:");
+      tft.print(temperatureF); tft.print("F");
+    }
+
+     
+    if (temperatureC > 78)
+    {
+      backgroundSummer();
+      tft.setCursor(20, 260);
+      tft.setTextSize(2);
+      tft.setTextColor(BLACK);
+      tft.print("Current temp:");
+      tft.print(temperatureF); tft.print("F");
+    }   
+  
+
+
+}
